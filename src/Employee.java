@@ -1,6 +1,6 @@
 public class Employee {
 	protected String name;
-	protected int type;
+	protected String type;
 	protected double weeklyPay;
 	
 	public String getName() {
@@ -14,7 +14,7 @@ public class Employee {
 		return type;
 	}
 	
-	public void setType(int t) {
+	public void setType(String t) {
 		type = t;
 	}
 	
@@ -27,5 +27,8 @@ public class Employee {
 	
 	public void printWeeklyPay() {
 		// Child classes method will replace this method.
+	}
+	public void calculateAllWeeklyTotal() {
+		//input how to calculate total
 	}
 }

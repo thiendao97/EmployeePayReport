@@ -1,8 +1,25 @@
 
 public class CommissionedEmployee extends Employee {
+	Double Sales;
 	
-	public void printWeeklyPay() { //TODO: Modify This
-		System.out.println(name + "\t\t\t\t" + "ComissionedEmployee\t\t"+ weeklyPay);
+	CommissionedEmployee(Double s) {
+		Sales = s;
+		calculateCommissionedSales();
 	}
-
+	
+	public Double getSales() {
+		return Sales;
+	}
+	
+	public void setSales(Double s) {
+		Sales = s;
+	}
+	
+	public void calculateCommissionedSales( ) {
+		double commissionedRate = .20;
+		weeklyPay = Sales * commissionedRate;	
+	}
+	public void printWeeklyPay() {
+		System.out.printf("%-16s%-10s%-10s%-12s%-12s%-16s\n", name, "Commissioned", "", Sales, "", weeklyPay);
+	}
 }

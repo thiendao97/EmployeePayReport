@@ -37,6 +37,6 @@ public class HourlyEmployee extends Employee {
 		}
 	}
 	public void printWeeklyPay() {
-		System.out.println(name + "\t\t\t\t" + "Hourly\t\t" + hours + "\t\t\t\t" + rate + "\t\t" + weeklyPay);
+		System.out.printf("%-16s%-10s%-6s%-12s%-12s%-16s\n", name, "Hourly", hours, "", rate, weeklyPay);
 	}
 }
