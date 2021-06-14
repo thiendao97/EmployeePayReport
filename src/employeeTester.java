@@ -24,7 +24,7 @@ public class employeeTester {
 					System.out.print("Please enter employee name: ");
 					String name = in.nextLine();
 					System.out.print("What is the Employee type? \n 1. Salaried \n 2. Hourly \n 3. Commissioned \n");
-					int employeeType = in.nextInt();
+					int employeeType = Integer.parseInt(in.nextLine());
 					switch(employeeType) {
 						case 1:
 							// TODO
@@ -32,9 +32,9 @@ public class employeeTester {
 							break;
 						case 2: // Hourly
 							System.out.println("What are your hours?");
-							int hours = in.nextInt();
+							int hours = Integer.parseInt(in.nextLine());
 							System.out.println("What is your hourly rate?");
-							double rate = in.nextDouble();
+							double rate = Double.parseDouble(in.nextLine());
 							HourlyEmployee employee = new HourlyEmployee(hours, rate);
 							employee.setName(name);
 							employee.setType(employeeType);
@@ -50,21 +50,23 @@ public class employeeTester {
 					} // end of inner switch
 					break; //breaking menu option 1
 				case "2":
-					//TODO: print list
+					//TODO: Fix Formatting.... That's it.
 					System.out.println("Name\t\t\t\tClass\t\tHours\t\tSales\t\tRate\t\tWeeklyPay");
 					System.out.println("=========================================================================================================");
-					for (int i = 0; i <= employeeList.size(); i++) {
+					for (int i = 0; i < employeeList.size(); i++) {
 						int type = employeeList.get(i).getType();
 						employeeList.get(i).printWeeklyPay();
 					}
 					
 					break; //breaking of menu option 2
 				case "3":
+					
 					//TODO: print list + Let user choose employee to give bonus to
 					break; //breaking of menu option 3
 				case "4":
 					System.exit(0);
 					break; //breaking of menu option 4
+
 				default:
 					System.out.println("Invalid option please try again.");
 					break;

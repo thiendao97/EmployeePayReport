@@ -3,13 +3,6 @@ public class Employee {
 	protected int type;
 	protected double weeklyPay;
 	
-	/*
-	Employee () {
-		name = "";
-		type = null;
-		weeklyPay = 0.0;
-	}
-	*/
 	public String getName() {
 		return name;
 	}
