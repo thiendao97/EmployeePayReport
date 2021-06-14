@@ -1,8 +1,6 @@
-import java.util.Scanner;
-
 public class Employee {
-	private String name;
-	private int type;
+	protected String name;
+	protected int type;
 	protected double weeklyPay;
 	
 	/*
@@ -32,5 +30,9 @@ public class Employee {
 	}
 	public void setWeeklyPay(double w) {
 		weeklyPay = w;
+	}
+	
+	public void printWeeklyPay() {
+		// Child classes method will replace this method.
 	}
 }

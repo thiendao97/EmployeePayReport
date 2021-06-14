@@ -17,8 +17,8 @@ public class employeeTester {
 			System.out.print("2. Print the employee list\n");
 			System.out.print("3. Reward a salaried employee\n");
 			System.out.print("4. Exit Program\n");
-			
 			menuOption = in.nextLine();
+			
 			switch (menuOption) {
 				case "1":
 					System.out.print("Please enter employee name: ");
@@ -29,7 +29,6 @@ public class employeeTester {
 						case 1:
 							// TODO
 							System.out.println("You are Salaried");
-							keepLooping = false;
 							break;
 						case 2: // Hourly
 							System.out.println("What are your hours?");
@@ -39,7 +38,6 @@ public class employeeTester {
 							HourlyEmployee employee = new HourlyEmployee(hours, rate);
 							employee.setName(name);
 							employee.setType(employeeType);
-							
 							employeeList.add(employee);
 							break;
 						case 3:
@@ -53,6 +51,12 @@ public class employeeTester {
 					break; //breaking menu option 1
 				case "2":
 					//TODO: print list
+					System.out.println("Name\t\t\t\tClass\t\tHours\t\tSales\t\tRate\t\tWeeklyPay");
+					System.out.println("=========================================================================================================");
+					for (int i = 0; i <= employeeList.size(); i++) {
+						int type = employeeList.get(i).getType();
+						employeeList.get(i).printWeeklyPay();
+					}
 					
 					break; //breaking of menu option 2
 				case "3":
@@ -63,7 +67,9 @@ public class employeeTester {
 					break; //breaking of menu option 4
 				default:
 					System.out.println("Invalid option please try again.");
+					break;
 			} //end of outer switch
+			
 		
 		} // end of while
 	} // end of main
