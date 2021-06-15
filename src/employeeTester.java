@@ -79,15 +79,18 @@ public class employeeTester {
 					}
 					System.out.println(String.format( "%.2f", totalPay));
 					
+					boolean printLegend = false;
 					for (int i = 0; i < employeeList.size(); i++) {
 						if (employeeList.get(i) instanceof SalariedEmployee) {
 							if (((SalariedEmployee) employeeList.get(i)).getBonusAddedToTrue() == true) {
-								System.out.println("*A 10% bonus is awarded\n");
+								printLegend = true;
 							}
+							
 						}
-					}	
-					
-					
+					}
+					if (printLegend) {
+						System.out.println("*A 10% bonus is awarded\n");
+					}
 					break; //breaking of menu option 2
 				case "3":
 					System.out.printf("%-7s%-24s%-16s%-16s%-12s%-12s%-16s\n", "Index", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
