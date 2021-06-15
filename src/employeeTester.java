@@ -24,12 +24,12 @@ public class employeeTester {
 					System.out.print("Please enter employee name: ");
 					String name = in.nextLine();
 					System.out.print("What is the Employee type: Salaried, Hourly, or Commissioned");
-					String employeeType = String.parseString(in.nextLine()); //parse doesn't work maybe jut use in.nextLine()?
+					String employeeType = in.nextLine();
 					switch(employeeType) {
 						case "Salaried":
 							System.out.println("What is your weekly salary?");
 							Double salary = Double.parseDouble(in.nextLine());
-							SalariedEmployee Employee = new SalariedEmployee(weeklyPay); //can't use same object employee
+							SalariedEmployee Employee = new SalariedEmployee(salary); //can't use same object employee
 							Employee.setName(name);
 							Employee.setType(employeeType);
 							employeeList.add(Employee);
@@ -47,10 +47,10 @@ public class employeeTester {
 						case "Commissioned":
 							System.out.println("How much did you make from sales?");
 							double sales = Double.parseDouble(in.nextLine());
-							CommissionedEmployee mployee = new CommissionedEmployee(sales); //can't use same object employee 
-							Employee.setName(name);
-							Employee.setType(employeeType);
-							employeeList.add(employee);
+							CommissionedEmployee cEmployee = new CommissionedEmployee(sales); //can't use same object employee 
+							cEmployee.setName(name);
+							cEmployee.setType(employeeType);
+							employeeList.add(cEmployee);
 							break;
 						default:
 							System.out.println("Invalid Option. No employee was added.");
@@ -62,7 +62,6 @@ public class employeeTester {
 					System.out.println("=======================================================================");
 					System.out.println("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
 					for (int i = 0; i < employeeList.size(); i++) {
-						int type = employeeList.get(i).getType();
 						employeeList.get(i).printWeeklyPay();
 					}
 					break; //breaking of menu option 2

@@ -10,7 +10,7 @@ public class Employee {
 		name = n;
 	}
 	
-	public int getType() {
+	public String getType() {
 		return type;
 	}
 	
