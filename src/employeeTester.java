@@ -23,33 +23,33 @@ public class employeeTester {
 				case "1":
 					System.out.print("Please enter employee name: ");
 					String name = in.nextLine();
-					System.out.print("What is the Employee type: Salaried, Hourly, or Commissioned");
-					String employeeType = in.nextLine();
+					System.out.print("What is the Employee type: 1. Salaried, 2. Hourly, or 3. Commissioned\n");
+					int employeeType = Integer.parseInt(in.nextLine());
 					switch(employeeType) {
-						case "Salaried":
+						case 1:
 							System.out.println("What is your weekly salary?");
 							Double salary = Double.parseDouble(in.nextLine());
-							SalariedEmployee Employee = new SalariedEmployee(salary); //can't use same object employee
-							Employee.setName(name);
-							Employee.setType(employeeType);
-							employeeList.add(Employee);
+							SalariedEmployee sEmployee = new SalariedEmployee(salary); //can't use same object employee
+							sEmployee.setName(name);
+							sEmployee.setType("Salaried");
+							employeeList.add(sEmployee);
 							break;
-						case "Hourly": 
+						case 2: 
 							System.out.println("What are your hours?");
 							int hours = Integer.parseInt(in.nextLine());
 							System.out.println("What is your hourly rate?");
 							double rate = Double.parseDouble(in.nextLine());
-							HourlyEmployee employee = new HourlyEmployee(hours, rate); //can't use same object employee
-							employee.setName(name);
-							employee.setType(employeeType);
-							employeeList.add(employee);
+							HourlyEmployee hEmployee = new HourlyEmployee(hours, rate); //can't use same object employee
+							hEmployee.setName(name);
+							hEmployee.setType("Hourly");
+							employeeList.add(hEmployee);
 							break;
-						case "Commissioned":
+						case 3:
 							System.out.println("How much did you make from sales?");
 							double sales = Double.parseDouble(in.nextLine());
 							CommissionedEmployee cEmployee = new CommissionedEmployee(sales); //can't use same object employee 
 							cEmployee.setName(name);
-							cEmployee.setType(employeeType);
+							cEmployee.setType("Commissioned");
 							employeeList.add(cEmployee);
 							break;
 						default:
