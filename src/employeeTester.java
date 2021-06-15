@@ -65,12 +65,12 @@ public class employeeTester {
 					break; //breaking menu option 1
 				case "2":
 					boolean printAsterisk = false;
-					System.out.printf("%-16s%-10s%-10s%-12s%-12s%-16s\n", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
-					System.out.println("=======================================================================");
+					System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
+					System.out.println("==========================================================================================");
 					for (int i = 0; i < employeeList.size(); i++) {
 						employeeList.get(i).printWeeklyPay();
 					}
-					System.out.println("=======================================================================");
+					System.out.println("==========================================================================================");
 					System.out.print("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
 			
 					Double totalPay = 0.0;
@@ -90,8 +90,8 @@ public class employeeTester {
 					
 					break; //breaking of menu option 2
 				case "3":
-					System.out.printf("%-7s%-16s%-10s%-10s%-12s%-12s%-16s\n", "Index", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
-					System.out.println("=======================================================================");
+					System.out.printf("%-7s%-24s%-16s%-16s%-12s%-12s%-16s\n", "Index", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
+					System.out.println("=================================================================================================");
 					for (int i = 0; i < employeeList.size(); i++) {
 						if (employeeList.get(i) instanceof SalariedEmployee) { // checks if the Employee in the array list is Salaried Employee
 							System.out.printf("%-7s", i);
