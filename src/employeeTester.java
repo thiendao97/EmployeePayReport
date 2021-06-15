@@ -71,13 +71,13 @@ public class employeeTester {
 						employeeList.get(i).printWeeklyPay();
 					}
 					System.out.println("==========================================================================================");
-					System.out.print("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
+					System.out.print("TOTAL $"); 
 			
 					Double totalPay = 0.0;
 					for (int i = 0;  i < employeeList.size(); i++) {
 						 totalPay = totalPay + employeeList.get(i).getWeeklyPay();
 					}
-					System.out.println(totalPay);
+					System.out.println(Math.round(totalPay));
 					
 					for (int i = 0; i < employeeList.size(); i++) {
 						if (employeeList.get(i) instanceof SalariedEmployee) {
@@ -94,7 +94,7 @@ public class employeeTester {
 					System.out.println("=================================================================================================");
 					for (int i = 0; i < employeeList.size(); i++) {
 						if (employeeList.get(i) instanceof SalariedEmployee) { // checks if the Employee in the array list is Salaried Employee
-							System.out.printf("%-7s", i);
+							System.out.printf("%-7s", i); // spacing for index
 							employeeList.get(i).printWeeklyPay();
 						}
 					}	
@@ -106,8 +106,6 @@ public class employeeTester {
 						System.out.println("Bonus was added for Employee at index " + bonusAnswer + " to program.\n");
 					}
 					System.out.println("This person already has a bonus added. Please choose another.\n");
-					
-					//TODO: print list + Let user choose employee to give bonus to
 					break; //breaking of menu option 3
 				case "4":
 					System.out.println("Exiting program.....");

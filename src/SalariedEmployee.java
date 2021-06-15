@@ -10,7 +10,7 @@ public class SalariedEmployee extends Employee{
 			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Salaried", "", "", "", weeklyPay);
 		}
 		else {
-			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s%-3s\n", name, "Salaried", "", "", "", weeklyPay, "*");
+			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Salaried", "", "", "", Math.round(weeklyPay) + "*");
 		}
 		
 	}
