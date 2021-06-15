@@ -71,13 +71,13 @@ public class employeeTester {
 						employeeList.get(i).printWeeklyPay();
 					}
 					System.out.println("=======================================================================");
-					System.out.println("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
+					System.out.print("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
 			
 					Double totalPay = 0.0;
 					for (int i = 0;  i < employeeList.size(); i++) {
 						 totalPay = totalPay + employeeList.get(i).getWeeklyPay();
 					}
-					System.out.println(totalPay + "\n");
+					System.out.println(totalPay);
 					
 					for (int i = 0; i < employeeList.size(); i++) {
 						if (employeeList.get(i) instanceof SalariedEmployee) {
