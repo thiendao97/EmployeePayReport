@@ -24,7 +24,7 @@ public class employeeTester {
 					System.out.print("Please enter employee name: ");
 					String name = in.nextLine();
 					System.out.print("What is the Employee type: Salaried, Hourly, or Commissioned");
-					String employeeType = String.parseString(in.nextLine());
+					String employeeType = String.parseString(in.nextLine()); //parse doesn't work maybe jut use in.nextLine()?
 					switch(employeeType) {
 						case "Salaried":
 							System.out.println("What is your weekly salary?");

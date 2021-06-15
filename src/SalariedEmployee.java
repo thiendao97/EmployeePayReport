@@ -6,5 +6,6 @@ public class SalariedEmployee extends Employee{
 	}
 	public void addBonus() {
 		Double bonus = .10;
+		weeklyPay = weeklyPay * bonus;
 	}
 }
