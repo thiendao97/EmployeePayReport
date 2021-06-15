@@ -77,7 +77,7 @@ public class employeeTester {
 					for (int i = 0;  i < employeeList.size(); i++) {
 						 totalPay = totalPay + employeeList.get(i).getWeeklyPay();
 					}
-					System.out.println(Math.round(totalPay));
+					System.out.println(String.format( "%.2f", totalPay));
 					
 					for (int i = 0; i < employeeList.size(); i++) {
 						if (employeeList.get(i) instanceof SalariedEmployee) {

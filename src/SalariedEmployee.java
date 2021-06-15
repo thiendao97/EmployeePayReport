@@ -7,10 +7,10 @@ public class SalariedEmployee extends Employee{
 	}
 	public void printWeeklyPay() {
 		if (!bonusAdded) {
-			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Salaried", "", "", "", weeklyPay);
+			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Salaried", "", "", "", "$" + String.format( "%.2f", weeklyPay));
 		}
 		else {
-			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Salaried", "", "", "", Math.round(weeklyPay) + "*");
+			System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Salaried", "", "", "", "$" + String.format( "%.2f",weeklyPay) + "*");
 		}
 		
 	}

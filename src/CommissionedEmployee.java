@@ -21,6 +21,6 @@ public class CommissionedEmployee extends Employee {
 		weeklyPay = Sales * commissionedRate;
 	}
 	public void printWeeklyPay() {
-		System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Commissioned", "", Sales, "", weeklyPay);
+		System.out.printf("%-24s%-16s%-16s%-12s%-12s%-16s\n", name, "Commissioned", "", "$" + String.format( "%.2f", Sales), "", "$" + String.format( "%.2f", weeklyPay));
 	}
 }
