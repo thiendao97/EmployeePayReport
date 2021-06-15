@@ -23,7 +23,7 @@ public class employeeTester {
 				case "1":
 					System.out.print("Please enter employee name: ");
 					String name = in.nextLine();
-					System.out.print("What is the Employee type: 1. Salaried, 2. Hourly, or 3. Commissioned\n");
+					System.out.print("What is the Employee type: 1. Salaried, 2. Hourly, or 3. Commissioned 4. Go Back\n");
 					int employeeType = Integer.parseInt(in.nextLine());
 					switch(employeeType) {
 						case 1:
@@ -33,6 +33,7 @@ public class employeeTester {
 							sEmployee.setName(name);
 							sEmployee.setType("Salaried");
 							employeeList.add(sEmployee);
+							System.out.println("Employee was added to program.\n");
 							break;
 						case 2: 
 							System.out.println("What are your hours?");
@@ -43,6 +44,7 @@ public class employeeTester {
 							hEmployee.setName(name);
 							hEmployee.setType("Hourly");
 							employeeList.add(hEmployee);
+							System.out.println("Employee was added to program.\n");
 							break;
 						case 3:
 							System.out.println("How much did you make from sales?");
@@ -51,6 +53,10 @@ public class employeeTester {
 							cEmployee.setName(name);
 							cEmployee.setType("Commissioned");
 							employeeList.add(cEmployee);
+							System.out.println("Employee was added to program.\n");
+							break;
+						case 4:
+							System.out.println("Going back to menu.");
 							break;
 						default:
 							System.out.println("Invalid Option. No employee was added.");
@@ -71,6 +77,7 @@ public class employeeTester {
 					//TODO: print list + Let user choose employee to give bonus to
 					break; //breaking of menu option 3
 				case "4":
+					System.out.println("Exiting program.....");
 					System.exit(0);
 					break; //breaking of menu option 4
 				default:

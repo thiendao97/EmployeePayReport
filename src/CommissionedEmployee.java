@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 
 public class CommissionedEmployee extends Employee {
 	Double Sales;
@@ -18,9 +19,8 @@ public class CommissionedEmployee extends Employee {
 	public void calculateCommissionedSales( ) {
 		double commissionedRate = .20;
 		weeklyPay = Sales * commissionedRate;
-		weeklyPay = Math.round(weeklyPay);
 	}
 	public void printWeeklyPay() {
-		System.out.printf("%-16s%-10s%-10s%-12s%-12s%-16s\n", name, "Commissioned", "", Sales, "", weeklyPay);
+		System.out.printf("%-16s%-10s%-10s%-12s%-12s%-16s\n", name, "Commissioned", "", Sales, "", weeklyPay);	
 	}
 }
