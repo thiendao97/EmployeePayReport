@@ -28,7 +28,4 @@ public class Employee {
 	public void printWeeklyPay() {
 		// Child classes method will replace this method.
 	}
-	public void calculateAllWeeklyTotal() {
-		//input how to calculate total
-	}
 }

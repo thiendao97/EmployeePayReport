@@ -64,15 +64,45 @@ public class employeeTester {
 					} // end of inner switch
 					break; //breaking menu option 1
 				case "2":
+					boolean printAsterisk = false;
 					System.out.printf("%-16s%-10s%-10s%-12s%-12s%-16s\n", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
 					System.out.println("=======================================================================");
-					System.out.println("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
 					for (int i = 0; i < employeeList.size(); i++) {
 						employeeList.get(i).printWeeklyPay();
 					}
+					System.out.println("=======================================================================");
+					System.out.println("TOTAL $"); //need to find a way to add all the weekly pay... go through each one in array and add it?
+			
+					// TODO Calculate Total
+					
+					
+					for (int i = 0; i < employeeList.size(); i++) {
+						if (employeeList.get(i) instanceof SalariedEmployee) {
+							if (((SalariedEmployee) employeeList.get(i)).getBonusAddedToTrue() == true) {
+								System.out.println("*A 10% bonus is awarded\n");
+							}
+						}
+					}	
+					
+					
 					break; //breaking of menu option 2
 				case "3":
-					System.out.println("Which Salaried employee would you like to give the bonus to?");
+					System.out.printf("%-7s%-16s%-10s%-10s%-12s%-12s%-16s\n", "Index", "Name", "Class", "Hours", "Sales", "Rate", "Weekly Pay");
+					System.out.println("=======================================================================");
+					for (int i = 0; i < employeeList.size(); i++) {
+						if (employeeList.get(i) instanceof SalariedEmployee) { // checks if the Employee in the array list is Salaried Employee
+							System.out.printf("%-7s", i);
+							employeeList.get(i).printWeeklyPay();
+						}
+					}	
+					System.out.println("Which Salaried employee would you like to give the bonus to? (Choose a number from the index)");
+					int bonusAnswer = Integer.parseInt(in.nextLine());
+					if (((SalariedEmployee) employeeList.get(bonusAnswer)).getBonusAddedToTrue() == false) {
+						((SalariedEmployee) employeeList.get(bonusAnswer)).addBonus(); // First convert Employee in the ArrayList to a SalariedEmployee. We do this so we can call addBonus(). Which only SalariedEmployee can call.
+						((SalariedEmployee) employeeList.get(bonusAnswer)).setBonusAddedToTrue();
+						System.out.println("Bonus was added for Employee at index " + bonusAnswer + " to program.\n");
+					}
+					System.out.println("This person already has a bonus added. Please choose another.\n");
 					
 					//TODO: print list + Let user choose employee to give bonus to
 					break; //breaking of menu option 3
