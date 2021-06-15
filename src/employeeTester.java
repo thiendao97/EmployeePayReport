@@ -105,7 +105,10 @@ public class employeeTester {
 						((SalariedEmployee) employeeList.get(bonusAnswer)).setBonusAddedToTrue();
 						System.out.println("Bonus was added for Employee at index " + bonusAnswer + " to program.\n");
 					}
-					System.out.println("This person already has a bonus added. Please choose another.\n");
+					else {
+						System.out.println("This person already has a bonus added. Please choose another.\n");						
+					}
+
 					break; //breaking of menu option 3
 				case "4":
 					System.out.println("Exiting program.....");
